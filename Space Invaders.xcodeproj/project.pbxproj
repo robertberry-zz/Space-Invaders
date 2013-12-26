@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		E11D1076186CD70800643AED /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = E11D1075186CD70800643AED /* ResourcePath.mm */; };
 		E11D1079186CD70800643AED /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E11D1078186CD70800643AED /* main.cpp */; };
-		E11D107C186CD70800643AED /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E11D107B186CD70800643AED /* cute_image.jpg */; };
-		E11D107E186CD70800643AED /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = E11D107D186CD70800643AED /* nice_music.ogg */; };
 		E11D1080186CD70800643AED /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E11D107F186CD70800643AED /* sansation.ttf */; };
 		E11D1082186CD70800643AED /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E11D1081186CD70800643AED /* icon.png */; };
+		E11D108D186CDBFF00643AED /* Textures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E11D108B186CDBFF00643AED /* Textures.cpp */; };
+		E11D108F186CE37C00643AED /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = E11D108E186CE37C00643AED /* player.png */; };
+		E12A98DF186CEA1A000EBD46 /* invader-2-frame-1.png in Resources */ = {isa = PBXBuildFile; fileRef = E12A98DD186CEA1A000EBD46 /* invader-2-frame-1.png */; };
+		E12A98E0186CEA1A000EBD46 /* invader-2-frame-2.png in Resources */ = {isa = PBXBuildFile; fileRef = E12A98DE186CEA1A000EBD46 /* invader-2-frame-2.png */; };
+		E12A98E3186CEB0B000EBD46 /* Invader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98E1186CEB0B000EBD46 /* Invader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,10 +24,15 @@
 		E11D1075186CD70800643AED /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
 		E11D1077186CD70800643AED /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		E11D1078186CD70800643AED /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		E11D107B186CD70800643AED /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
-		E11D107D186CD70800643AED /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
 		E11D107F186CD70800643AED /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
 		E11D1081186CD70800643AED /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		E11D108B186CDBFF00643AED /* Textures.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Textures.cpp; sourceTree = "<group>"; };
+		E11D108C186CDBFF00643AED /* Textures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Textures.h; sourceTree = "<group>"; };
+		E11D108E186CE37C00643AED /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		E12A98DD186CEA1A000EBD46 /* invader-2-frame-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "invader-2-frame-1.png"; sourceTree = "<group>"; };
+		E12A98DE186CEA1A000EBD46 /* invader-2-frame-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "invader-2-frame-2.png"; sourceTree = "<group>"; };
+		E12A98E1186CEB0B000EBD46 /* Invader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Invader.cpp; sourceTree = "<group>"; };
+		E12A98E2186CEB0B000EBD46 /* Invader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,10 @@
 				E11D1075186CD70800643AED /* ResourcePath.mm */,
 				E11D1077186CD70800643AED /* ResourcePath.hpp */,
 				E11D1078186CD70800643AED /* main.cpp */,
+				E11D108B186CDBFF00643AED /* Textures.cpp */,
+				E11D108C186CDBFF00643AED /* Textures.h */,
+				E12A98E1186CEB0B000EBD46 /* Invader.cpp */,
+				E12A98E2186CEB0B000EBD46 /* Invader.h */,
 				E11D107A186CD70800643AED /* Resources */,
 				E11D1073186CD70800643AED /* Supporting Files */,
 			);
@@ -77,8 +89,9 @@
 		E11D107A186CD70800643AED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E11D107B186CD70800643AED /* cute_image.jpg */,
-				E11D107D186CD70800643AED /* nice_music.ogg */,
+				E12A98DD186CEA1A000EBD46 /* invader-2-frame-1.png */,
+				E12A98DE186CEA1A000EBD46 /* invader-2-frame-2.png */,
+				E11D108E186CE37C00643AED /* player.png */,
 				E11D107F186CD70800643AED /* sansation.ttf */,
 				E11D1081186CD70800643AED /* icon.png */,
 			);
@@ -139,8 +152,9 @@
 			files = (
 				E11D1082186CD70800643AED /* icon.png in Resources */,
 				E11D1080186CD70800643AED /* sansation.ttf in Resources */,
-				E11D107E186CD70800643AED /* nice_music.ogg in Resources */,
-				E11D107C186CD70800643AED /* cute_image.jpg in Resources */,
+				E12A98DF186CEA1A000EBD46 /* invader-2-frame-1.png in Resources */,
+				E12A98E0186CEA1A000EBD46 /* invader-2-frame-2.png in Resources */,
+				E11D108F186CE37C00643AED /* player.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +182,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E11D1079186CD70800643AED /* main.cpp in Sources */,
+				E12A98E3186CEB0B000EBD46 /* Invader.cpp in Sources */,
+				E11D108D186CDBFF00643AED /* Textures.cpp in Sources */,
 				E11D1076186CD70800643AED /* ResourcePath.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +330,7 @@
 				E11D1087186CD70800643AED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
