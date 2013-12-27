@@ -19,8 +19,8 @@ private:
     Invader mTestInvader;
 public:
     PlayingState();
-    void onLogic(StateBasedGame& game);
-    void onRender(StateBasedGame& game);
+    void onLogic(StateBasedGame &game, sf::Time delta);
+    void onRender(StateBasedGame &game, sf::Time delta);
 };
 
 #endif /* defined(__Space_Invaders__PlayingState__) */

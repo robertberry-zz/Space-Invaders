@@ -23,7 +23,7 @@ private:
     int mScreenHeight;
     std::unique_ptr<GameState> mState;
 public:
-    StateBasedGame(std::string title, int screenWidth, int screenHeight, GameState *initialState);
+    StateBasedGame(std::string title, int screenWidth, int screenHeight, int frameRate, GameState *initialState);
     void setState(GameState *state);
     sf::RenderWindow &getWindow();
     void run();

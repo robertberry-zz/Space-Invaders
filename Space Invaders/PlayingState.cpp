@@ -19,7 +19,7 @@ PlayingState::PlayingState() : mPlayer((SCREEN_WIDTH - PLAYER_WIDTH) / 2, 200),
     
 }
 
-void PlayingState::onLogic(StateBasedGame &game) {
+void PlayingState::onLogic(StateBasedGame &game, sf::Time delta) {
     sf::RenderWindow &window = game.getWindow();
     
     // Process events
@@ -44,9 +44,11 @@ void PlayingState::onLogic(StateBasedGame &game) {
             }
         }
     }
+    
+    mPlayer.onDelta(delta);
 }
 
-void PlayingState::onRender(StateBasedGame &game) {
+void PlayingState::onRender(StateBasedGame &game, sf::Time delta) {
     sf::RenderWindow &window = game.getWindow();
     
     window.draw(mPlayer);

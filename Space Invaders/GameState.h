@@ -10,11 +10,12 @@
 #define __Space_Invaders__GameState__
 
 #include "StateBasedGame.h"
+#include <SFML/System.hpp>
 
 class GameState {
 public:
-    virtual void onLogic(StateBasedGame& game) = 0;
-    virtual void onRender(StateBasedGame& game) = 0;
+    virtual void onLogic(StateBasedGame& game, sf::Time delta) = 0;
+    virtual void onRender(StateBasedGame& game, sf::Time delta) = 0;
 };
 
 #endif /* defined(__Space_Invaders__GameState__) */

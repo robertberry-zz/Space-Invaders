@@ -9,10 +9,11 @@
 #include "StateBasedGame.h"
 #include "GameState.h"
 
-StateBasedGame::StateBasedGame(std::string title, int width, int height, GameState *initialState) :
+StateBasedGame::StateBasedGame(std::string title, int width, int height, int frameRate, GameState *initialState) :
   mTitle(title), mScreenWidth(width), mScreenHeight(height), mState(std::unique_ptr<GameState>(initialState)),
   mWindow(sf::VideoMode(width, height), title)
 {
+    mWindow.setFramerateLimit(frameRate);
 }
 
 void StateBasedGame::setState(GameState *state) {
@@ -25,13 +26,10 @@ void StateBasedGame::run() {
     
     while (mWindow.isOpen())
     {
-        sf::Time elapsed = clock.restart();
-        
-        /** TODO implement logic to pause till frame is over */
-        
-        mState->onLogic(*this);
+        sf::Time delta = clock.restart();
+        mState->onLogic(*this, delta);
         mWindow.clear();
-        mState->onRender(*this);
+        mState->onRender(*this, delta);
         mWindow.display();
     }
 }
