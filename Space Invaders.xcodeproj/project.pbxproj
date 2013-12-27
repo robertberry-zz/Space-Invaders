@@ -19,6 +19,7 @@
 		E12A98E6186DB800000EBD46 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98E4186DB800000EBD46 /* Player.cpp */; };
 		E12A98EC186E23AF000EBD46 /* StateBasedGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98EA186E23AF000EBD46 /* StateBasedGame.cpp */; };
 		E12A98F2186E29DF000EBD46 /* PlayingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98F0186E29DF000EBD46 /* PlayingState.cpp */; };
+		E12A98F5186E3C2F000EBD46 /* PhysicsHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98F3186E3C2F000EBD46 /* PhysicsHelper.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		E12A98EE186E23DA000EBD46 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
 		E12A98F0186E29DF000EBD46 /* PlayingState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayingState.cpp; sourceTree = "<group>"; };
 		E12A98F1186E29DF000EBD46 /* PlayingState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingState.h; sourceTree = "<group>"; };
+		E12A98F3186E3C2F000EBD46 /* PhysicsHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsHelper.cpp; sourceTree = "<group>"; };
+		E12A98F4186E3C2F000EBD46 /* PhysicsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				E12A98EE186E23DA000EBD46 /* GameState.h */,
 				E12A98E4186DB800000EBD46 /* Player.cpp */,
 				E12A98E5186DB800000EBD46 /* Player.h */,
+				E12A98F3186E3C2F000EBD46 /* PhysicsHelper.cpp */,
+				E12A98F4186E3C2F000EBD46 /* PhysicsHelper.h */,
 				E12A98E8186DB9B0000EBD46 /* DeltaListener.h */,
 				E11D108B186CDBFF00643AED /* Textures.cpp */,
 				E11D108C186CDBFF00643AED /* Textures.h */,
@@ -205,6 +210,7 @@
 				E12A98E3186CEB0B000EBD46 /* Invader.cpp in Sources */,
 				E11D108D186CDBFF00643AED /* Textures.cpp in Sources */,
 				E11D1076186CD70800643AED /* ResourcePath.mm in Sources */,
+				E12A98F5186E3C2F000EBD46 /* PhysicsHelper.cpp in Sources */,
 				E12A98F2186E29DF000EBD46 /* PlayingState.cpp in Sources */,
 				E12A98E6186DB800000EBD46 /* Player.cpp in Sources */,
 			);

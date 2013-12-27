@@ -15,15 +15,10 @@
 class Player : public sf::Drawable, public DeltaListener {
 public:
     Player(int x, int y);
-    void setVelocityX(float velocityX);
-    float getVelocityX();
-    void setX(int x);
-    int getX();
-    virtual void onDelta(sf::Time delta);
+    void setVelocity(sf::Vector2f velocity);
+    void onDelta(sf::Time delta);
 private:
-    int mX;
-    int mY;
-    float mVelocityX;
+    sf::Vector2f mVelocity;
     sf::Sprite mSprite;
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };

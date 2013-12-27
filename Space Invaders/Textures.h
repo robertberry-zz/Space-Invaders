@@ -15,7 +15,7 @@
 class Textures {
 
 public:
-    static Textures& getInstance();
+    static Textures &getInstance();
     
     sf::Texture &getPlayer();
     sf::Texture &getInvader1(int frame);
