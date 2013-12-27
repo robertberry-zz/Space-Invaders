@@ -13,7 +13,7 @@
 
 enum InvaderType { INVADER_1, INVADER_2, INVADER_3 };
 
-class Invader {
+class Invader : public sf::Drawable {
 public:
     
     Invader(int x, int y, InvaderType type);
@@ -25,6 +25,8 @@ private:
     int mX;
     int mY;
     int mFrame;
+    
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     
     void refreshTexture();
 };

@@ -16,6 +16,10 @@
 		E12A98DF186CEA1A000EBD46 /* invader-2-frame-1.png in Resources */ = {isa = PBXBuildFile; fileRef = E12A98DD186CEA1A000EBD46 /* invader-2-frame-1.png */; };
 		E12A98E0186CEA1A000EBD46 /* invader-2-frame-2.png in Resources */ = {isa = PBXBuildFile; fileRef = E12A98DE186CEA1A000EBD46 /* invader-2-frame-2.png */; };
 		E12A98E3186CEB0B000EBD46 /* Invader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98E1186CEB0B000EBD46 /* Invader.cpp */; };
+		E12A98E6186DB800000EBD46 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98E4186DB800000EBD46 /* Player.cpp */; };
+		E12A98EC186E23AF000EBD46 /* StateBasedGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98EA186E23AF000EBD46 /* StateBasedGame.cpp */; };
+		E12A98EF186E23DA000EBD46 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98ED186E23DA000EBD46 /* GameState.cpp */; };
+		E12A98F2186E29DF000EBD46 /* PlayingState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98F0186E29DF000EBD46 /* PlayingState.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,15 @@
 		E12A98DE186CEA1A000EBD46 /* invader-2-frame-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "invader-2-frame-2.png"; sourceTree = "<group>"; };
 		E12A98E1186CEB0B000EBD46 /* Invader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Invader.cpp; sourceTree = "<group>"; };
 		E12A98E2186CEB0B000EBD46 /* Invader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invader.h; sourceTree = "<group>"; };
+		E12A98E4186DB800000EBD46 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		E12A98E5186DB800000EBD46 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		E12A98E8186DB9B0000EBD46 /* DeltaListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeltaListener.h; sourceTree = "<group>"; };
+		E12A98EA186E23AF000EBD46 /* StateBasedGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StateBasedGame.cpp; sourceTree = "<group>"; };
+		E12A98EB186E23AF000EBD46 /* StateBasedGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateBasedGame.h; sourceTree = "<group>"; };
+		E12A98ED186E23DA000EBD46 /* GameState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
+		E12A98EE186E23DA000EBD46 /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
+		E12A98F0186E29DF000EBD46 /* PlayingState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayingState.cpp; sourceTree = "<group>"; };
+		E12A98F1186E29DF000EBD46 /* PlayingState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingState.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +81,15 @@
 				E11D1075186CD70800643AED /* ResourcePath.mm */,
 				E11D1077186CD70800643AED /* ResourcePath.hpp */,
 				E11D1078186CD70800643AED /* main.cpp */,
+				E12A98F0186E29DF000EBD46 /* PlayingState.cpp */,
+				E12A98F1186E29DF000EBD46 /* PlayingState.h */,
+				E12A98EA186E23AF000EBD46 /* StateBasedGame.cpp */,
+				E12A98EB186E23AF000EBD46 /* StateBasedGame.h */,
+				E12A98ED186E23DA000EBD46 /* GameState.cpp */,
+				E12A98EE186E23DA000EBD46 /* GameState.h */,
+				E12A98E4186DB800000EBD46 /* Player.cpp */,
+				E12A98E5186DB800000EBD46 /* Player.h */,
+				E12A98E8186DB9B0000EBD46 /* DeltaListener.h */,
 				E11D108B186CDBFF00643AED /* Textures.cpp */,
 				E11D108C186CDBFF00643AED /* Textures.h */,
 				E12A98E1186CEB0B000EBD46 /* Invader.cpp */,
@@ -182,9 +204,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E11D1079186CD70800643AED /* main.cpp in Sources */,
+				E12A98EC186E23AF000EBD46 /* StateBasedGame.cpp in Sources */,
 				E12A98E3186CEB0B000EBD46 /* Invader.cpp in Sources */,
 				E11D108D186CDBFF00643AED /* Textures.cpp in Sources */,
+				E12A98EF186E23DA000EBD46 /* GameState.cpp in Sources */,
 				E11D1076186CD70800643AED /* ResourcePath.mm in Sources */,
+				E12A98F2186E29DF000EBD46 /* PlayingState.cpp in Sources */,
+				E12A98E6186DB800000EBD46 /* Player.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
