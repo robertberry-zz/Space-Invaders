@@ -36,3 +36,7 @@ void LivesCounter::draw(sf::RenderTarget& target, sf::RenderStates states) const
         target.draw(sprite);
     });
 }
+
+int LivesCounter::get() {
+    return mN;
+}

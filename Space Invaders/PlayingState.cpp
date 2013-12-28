@@ -15,7 +15,6 @@
 const std::string hiScoreText = "S C O R E < 1 >     H I - S C O R E     S C O R E < 2 >";
 const std::string creditsText = "C R E D I T      0 0";
 const int FONT_SIZE = 8;
-const int INITIAL_LIVES = 3;
 const int PLAYER_Y = 208;
 const sf::Font &font = Fonts::getInstance().getMainFont();
 
@@ -23,11 +22,10 @@ PlayingState::PlayingState() :
   mPlayer((SCREEN_WIDTH - PLAYER_WIDTH) / 2, PLAYER_Y),
   mTestInvader((SCREEN_WIDTH - 20) / 2, 50, INVADER_2),
   mScoreText(hiScoreText, font, FONT_SIZE),
-  mRemainingLives(INITIAL_LIVES),
-  mRemainingLivesText(std::to_string(INITIAL_LIVES), font, FONT_SIZE),
+  mLives(X_MARGIN + 14, SCREEN_HEIGHT - Y_MARGIN - 8, 2),
+  mRemainingLivesText(std::to_string(mLives.get()), font, FONT_SIZE),
   mCreditsText(creditsText, font, FONT_SIZE),
-  mMaybeBullet(new Nothing<PlayerBullet>),
-  mLives(X_MARGIN + 14, SCREEN_HEIGHT - Y_MARGIN - 8, 2)
+  mMaybeBullet(new Nothing<PlayerBullet>)
 {
     mScoreText.setColor(sf::Color::White);
     mScoreText.setPosition(X_MARGIN, 0);
@@ -57,7 +55,15 @@ void PlayingState::onEnd(StateBasedGame &game) {
     game.getEventBus().removeSubscriber(&mPlayer);
 }
 
-void PlayingState::onLogic(StateBasedGame &game, sf::Time delta) {    
+void PlayingState::onLogic(StateBasedGame &game, sf::Time delta) {
+    auto playerBounds = mPlayer.getGlobalBounds();
+    float xVelocity = mPlayer.getVelocity().x;
+    
+    if ((playerBounds.left <= 0 && xVelocity < 0) ||
+        (playerBounds.left + playerBounds.width >= SCREEN_WIDTH && xVelocity > 0)) {
+        mPlayer.setVelocity(sf::Vector2f(0, 0));
+    }
+    
     mPlayer.onDelta(delta);
     if (mMaybeBullet->exists([&](PlayerBullet &bullet) {
         return (bullet.getGlobalBounds().top + bullet.getGlobalBounds().height) < 0;
@@ -68,6 +74,7 @@ void PlayingState::onLogic(StateBasedGame &game, sf::Time delta) {
             bullet.onDelta(delta);
         });
     }
+    mRemainingLivesText.setString(std::to_string(mLives.get()));
 }
 
 void PlayingState::onRender(StateBasedGame &game, sf::Time delta) {

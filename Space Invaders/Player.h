@@ -20,6 +20,7 @@ public:
     void onDelta(sf::Time delta);
     void update(sf::Event event);
     sf::Vector2f getPosition();
+    sf::Vector2f getVelocity();
     sf::FloatRect getGlobalBounds();
 private:
     sf::Vector2f mVelocity;

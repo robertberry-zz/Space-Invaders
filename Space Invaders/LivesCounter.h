@@ -22,6 +22,7 @@ public:
     LivesCounter(int x, int y, int initial);
     void add();
     void remove();
+    int get();
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 

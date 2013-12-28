@@ -29,6 +29,10 @@ void Player::setVelocity(sf::Vector2f velocity) {
     mVelocity = velocity;
 }
 
+sf::Vector2f Player::getVelocity() {
+    return mVelocity;
+}
+
 void Player::update(sf::Event event) {
     if (event.type == sf::Event::KeyPressed) {
         if (event.key.code == sf::Keyboard::Right) {
