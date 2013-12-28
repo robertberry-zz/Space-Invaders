@@ -26,14 +26,15 @@ PlayingState::PlayingState() :
   mRemainingLives(INITIAL_LIVES),
   mRemainingLivesText(std::to_string(INITIAL_LIVES), font, FONT_SIZE),
   mCreditsText(creditsText, font, FONT_SIZE),
-  mMaybeBullet(new Nothing<PlayerBullet>)
+  mMaybeBullet(new Nothing<PlayerBullet>),
+  mLives(X_MARGIN + 14, SCREEN_HEIGHT - Y_MARGIN - 8, 2)
 {
     mScoreText.setColor(sf::Color::White);
     mScoreText.setPosition(X_MARGIN, 0);
 
     mRemainingLivesText.setColor(sf::Color::White);
     auto remainingLivesBounds = mRemainingLivesText.getGlobalBounds();
-    mRemainingLivesText.setPosition(X_MARGIN, SCREEN_HEIGHT - remainingLivesBounds.height - Y_MARGIN);
+    mRemainingLivesText.setPosition(5, SCREEN_HEIGHT - remainingLivesBounds.height - Y_MARGIN);
     
     mCreditsText.setColor(sf::Color::White);
     auto creditsBounds = mCreditsText.getGlobalBounds();
@@ -78,6 +79,7 @@ void PlayingState::onRender(StateBasedGame &game, sf::Time delta) {
     window.draw(mRemainingLivesText);
     window.draw(mCreditsText);
     window.draw(mBottomBorder);
+    window.draw(mLives);
     
     mMaybeBullet->forEach([&](PlayerBullet &bullet) {
         window.draw(bullet);

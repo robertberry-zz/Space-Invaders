@@ -24,7 +24,7 @@ public:
 private:
     sf::Vector2f mVelocity;
     sf::Sprite mSprite;
-    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 
 #endif /* defined(__Space_Invaders__Player__) */

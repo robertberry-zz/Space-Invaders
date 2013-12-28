@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Space Invaders/PlayingState.cpp"
-            timestampString = "409935097.093605"
+            timestampString = "409936618.582846"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "PlayingState::PlayingState()"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,13 +58,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Space Invaders/PlayingState.cpp"
-            timestampString = "409935097.093605"
+            timestampString = "409936633.554999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "PlayingState::onRender(StateBasedGame &amp;game, sf::Time delta)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Space Invaders/LivesCounter.cpp"
+            timestampString = "409935652.952829"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
