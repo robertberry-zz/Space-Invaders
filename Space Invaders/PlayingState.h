@@ -15,6 +15,10 @@
 
 class PlayingState : public GameState {
 private:
+    sf::Text mScoreText;
+    sf::Text mRemainingLivesText;
+    sf::Text mCreditsText;
+    int mRemainingLives;
     Player mPlayer;
     Invader mTestInvader;
 public:
