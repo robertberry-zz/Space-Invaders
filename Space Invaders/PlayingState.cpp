@@ -13,13 +13,14 @@
 #include <string>
 
 const std::string hiScoreText = "S C O R E < 1 >     H I - S C O R E     S C O R E < 2 >";
-const std::string creditsText = "C R E D I T    0 0";
+const std::string creditsText = "C R E D I T      0 0";
 const int FONT_SIZE = 8;
 const int INITIAL_LIVES = 3;
+const int PLAYER_Y = 208;
 const sf::Font &font = Fonts::getInstance().getMainFont();
 
 PlayingState::PlayingState() :
-  mPlayer((SCREEN_WIDTH - PLAYER_WIDTH) / 2, 200),
+  mPlayer((SCREEN_WIDTH - PLAYER_WIDTH) / 2, PLAYER_Y),
   mTestInvader((SCREEN_WIDTH - 20) / 2, 50, INVADER_2),
   mScoreText(hiScoreText, font, FONT_SIZE),
   mRemainingLives(INITIAL_LIVES),
@@ -28,7 +29,7 @@ PlayingState::PlayingState() :
   mMaybeBullet(new Nothing<PlayerBullet>)
 {
     mScoreText.setColor(sf::Color::White);
-    mScoreText.setPosition(X_MARGIN, Y_MARGIN);
+    mScoreText.setPosition(X_MARGIN, 0);
 
     mRemainingLivesText.setColor(sf::Color::White);
     auto remainingLivesBounds = mRemainingLivesText.getGlobalBounds();
@@ -40,6 +41,10 @@ PlayingState::PlayingState() :
         SCREEN_WIDTH - creditsBounds.width - X_MARGIN,
         SCREEN_HEIGHT - creditsBounds.height - Y_MARGIN
     );
+    
+    mBottomBorder.setPosition(0, SCREEN_HEIGHT - Y_MARGIN - creditsBounds.height - 1);
+    mBottomBorder.setSize(sf::Vector2f(SCREEN_WIDTH, 1));
+    mBottomBorder.setFillColor(sf::Color::Green);
 }
 
 void PlayingState::onStart(StateBasedGame &game) {
@@ -72,6 +77,7 @@ void PlayingState::onRender(StateBasedGame &game, sf::Time delta) {
     window.draw(mTestInvader);
     window.draw(mRemainingLivesText);
     window.draw(mCreditsText);
+    window.draw(mBottomBorder);
     
     mMaybeBullet->forEach([&](PlayerBullet &bullet) {
         window.draw(bullet);

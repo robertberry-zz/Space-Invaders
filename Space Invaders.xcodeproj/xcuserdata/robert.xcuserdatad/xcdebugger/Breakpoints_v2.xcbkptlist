@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Space Invaders/PlayingState.cpp"
-            timestampString = "409934280.898865"
+            timestampString = "409935097.093605"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "PlayingState::PlayingState()"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Space Invaders/PlayingState.cpp"
-            timestampString = "409934280.898865"
+            timestampString = "409935097.093605"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "PlayingState::onRender(StateBasedGame &amp;game, sf::Time delta)"
             landmarkType = "5">
          </BreakpointContent>

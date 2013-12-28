@@ -25,6 +25,7 @@ private:
     int mRemainingLives;
     Player mPlayer;
     Invader mTestInvader;
+    sf::RectangleShape mBottomBorder;
     std::unique_ptr<Maybe<PlayerBullet>> mMaybeBullet;
 public:
     PlayingState();
