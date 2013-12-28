@@ -42,3 +42,7 @@ void Player::update(sf::Event event) {
         setVelocity(sf::Vector2f(0, 0));
     }
 }
+
+sf::Vector2f Player::getPosition() {
+    return mSprite.getPosition();
+}

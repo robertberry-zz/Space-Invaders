@@ -22,7 +22,8 @@ PlayingState::PlayingState() :
   mScoreText("S C O R E < 1 >     H I - S C O R E     S C O R E < 2 >", font, FONT_SIZE),
   mRemainingLives(INITIAL_LIVES),
   mRemainingLivesText(std::to_string(INITIAL_LIVES), font, FONT_SIZE),
-  mCreditsText("C R E D I T    0 0", font, FONT_SIZE)
+  mCreditsText("C R E D I T    0 0", font, FONT_SIZE),
+  mMaybeBullet(new Nothing<PlayerBullet>)
 {
     mScoreText.setColor(sf::Color::White);
     mScoreText.setPosition(X_MARGIN, Y_MARGIN);
@@ -41,6 +42,7 @@ PlayingState::PlayingState() :
 
 void PlayingState::onStart(StateBasedGame &game) {
     game.getEventBus().addSubscriber(&mPlayer);
+    game.getEventBus().addSubscriber(this);
 }
 
 void PlayingState::onEnd(StateBasedGame &game) {
@@ -59,4 +61,16 @@ void PlayingState::onRender(StateBasedGame &game, sf::Time delta) {
     window.draw(mTestInvader);
     window.draw(mRemainingLivesText);
     window.draw(mCreditsText);
+    
+    mMaybeBullet->forEach([&](PlayerBullet &bullet) {
+        window.draw(bullet);
+    });
+}
+
+void PlayingState::update(sf::Event event) {
+    if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Key::Space && mMaybeBullet->isEmpty()) {
+        auto playerPosition = mPlayer.getPosition();
+        
+        mMaybeBullet = std::unique_ptr<Maybe<PlayerBullet>>(new Just<PlayerBullet>(PlayerBullet(playerPosition.x, playerPosition.y - 10)));
+    }
 }

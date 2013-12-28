@@ -12,8 +12,12 @@
 #include "GameState.h"
 #include "Player.h"
 #include "Invader.h"
+#include "EventSubscriber.h"
+#include "PlayerBullet.h"
+#include <memory>
+#include "Maybe.h"
 
-class PlayingState : public GameState {
+class PlayingState : public GameState, public EventSubscriber<sf::Event> {
 private:
     sf::Text mScoreText;
     sf::Text mRemainingLivesText;
@@ -21,12 +25,15 @@ private:
     int mRemainingLives;
     Player mPlayer;
     Invader mTestInvader;
+    std::unique_ptr<Maybe<PlayerBullet>> mMaybeBullet;
 public:
     PlayingState();
     void onStart(StateBasedGame &game);
     void onEnd(StateBasedGame &game);
     void onLogic(StateBasedGame &game, sf::Time delta);
     void onRender(StateBasedGame &game, sf::Time delta);
+    
+    void update(sf::Event event);
 };
 
 #endif /* defined(__Space_Invaders__PlayingState__) */

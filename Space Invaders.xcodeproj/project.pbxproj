@@ -21,6 +21,7 @@
 		E12A98F5186E3C2F000EBD46 /* PhysicsHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98F3186E3C2F000EBD46 /* PhysicsHelper.cpp */; };
 		E12A98FE186E5B32000EBD46 /* space_invaders.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E12A98FD186E5B32000EBD46 /* space_invaders.ttf */; };
 		E12A9901186E5B57000EBD46 /* Fonts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98FF186E5B57000EBD46 /* Fonts.cpp */; };
+		E1FE67C1186EED70001C87B3 /* PlayerBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1FE67BF186EED70001C87B3 /* PlayerBullet.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,9 @@
 		E12A98FD186E5B32000EBD46 /* space_invaders.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = space_invaders.ttf; sourceTree = "<group>"; };
 		E12A98FF186E5B57000EBD46 /* Fonts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fonts.cpp; sourceTree = "<group>"; };
 		E12A9900186E5B57000EBD46 /* Fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fonts.h; sourceTree = "<group>"; };
+		E1FE67BF186EED70001C87B3 /* PlayerBullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerBullet.cpp; sourceTree = "<group>"; };
+		E1FE67C0186EED70001C87B3 /* PlayerBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerBullet.h; sourceTree = "<group>"; };
+		E1FE67C2186EF97B001C87B3 /* Maybe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Maybe.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 				E11D1077186CD70800643AED /* ResourcePath.hpp */,
 				E11D1078186CD70800643AED /* main.cpp */,
 				E12A98F0186E29DF000EBD46 /* PlayingState.cpp */,
+				E1FE67C2186EF97B001C87B3 /* Maybe.h */,
 				E12A98FC186E51FB000EBD46 /* positions.h */,
 				E12A98F7186E4258000EBD46 /* EventBus.h */,
 				E12A98FA186E432E000EBD46 /* EventSubscriber.h */,
@@ -109,6 +114,8 @@
 				E12A98E2186CEB0B000EBD46 /* Invader.h */,
 				E11D107A186CD70800643AED /* Resources */,
 				E11D1073186CD70800643AED /* Supporting Files */,
+				E1FE67BF186EED70001C87B3 /* PlayerBullet.cpp */,
+				E1FE67C0186EED70001C87B3 /* PlayerBullet.h */,
 			);
 			path = "Space Invaders";
 			sourceTree = "<group>";
@@ -218,6 +225,7 @@
 			files = (
 				E11D1079186CD70800643AED /* main.cpp in Sources */,
 				E12A9901186E5B57000EBD46 /* Fonts.cpp in Sources */,
+				E1FE67C1186EED70001C87B3 /* PlayerBullet.cpp in Sources */,
 				E12A98EC186E23AF000EBD46 /* StateBasedGame.cpp in Sources */,
 				E12A98E3186CEB0B000EBD46 /* Invader.cpp in Sources */,
 				E11D108D186CDBFF00643AED /* Textures.cpp in Sources */,

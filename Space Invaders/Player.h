@@ -19,6 +19,7 @@ public:
     void setVelocity(sf::Vector2f velocity);
     void onDelta(sf::Time delta);
     void update(sf::Event event);
+    sf::Vector2f getPosition();
 private:
     sf::Vector2f mVelocity;
     sf::Sprite mSprite;
