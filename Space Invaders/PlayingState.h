@@ -17,6 +17,7 @@
 #include <memory>
 #include "Maybe.h"
 #include "LivesCounter.h"
+#include "ScoreCounter.h"
 
 class PlayingState : public GameState, public EventSubscriber<sf::Event> {
 private:
@@ -26,6 +27,7 @@ private:
     Player mPlayer;
     Invader mTestInvader;
     LivesCounter mLives;
+    ScoreCounter mPlayer1Score;
     sf::RectangleShape mBottomBorder;
     std::unique_ptr<Maybe<PlayerBullet>> mMaybeBullet;
 public:

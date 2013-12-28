@@ -22,6 +22,8 @@
 		E12A98FE186E5B32000EBD46 /* space_invaders.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E12A98FD186E5B32000EBD46 /* space_invaders.ttf */; };
 		E12A9901186E5B57000EBD46 /* Fonts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98FF186E5B57000EBD46 /* Fonts.cpp */; };
 		E1842691186F1D7000F8D4E4 /* LivesCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E184268F186F1D6F00F8D4E4 /* LivesCounter.cpp */; };
+		E1A6156D186F42FC00EB5C21 /* ScoreCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1A6156B186F42FC00EB5C21 /* ScoreCounter.cpp */; };
+		E1A61570186F59C400EB5C21 /* StringHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1A6156E186F59C300EB5C21 /* StringHelper.cpp */; };
 		E1FE67C1186EED70001C87B3 /* PlayerBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1FE67BF186EED70001C87B3 /* PlayerBullet.cpp */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,10 @@
 		E12A9900186E5B57000EBD46 /* Fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fonts.h; sourceTree = "<group>"; };
 		E184268F186F1D6F00F8D4E4 /* LivesCounter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LivesCounter.cpp; sourceTree = "<group>"; };
 		E1842690186F1D6F00F8D4E4 /* LivesCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivesCounter.h; sourceTree = "<group>"; };
+		E1A6156B186F42FC00EB5C21 /* ScoreCounter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScoreCounter.cpp; sourceTree = "<group>"; };
+		E1A6156C186F42FC00EB5C21 /* ScoreCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreCounter.h; sourceTree = "<group>"; };
+		E1A6156E186F59C300EB5C21 /* StringHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringHelper.cpp; sourceTree = "<group>"; };
+		E1A6156F186F59C300EB5C21 /* StringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelper.h; sourceTree = "<group>"; };
 		E1FE67BF186EED70001C87B3 /* PlayerBullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerBullet.cpp; sourceTree = "<group>"; };
 		E1FE67C0186EED70001C87B3 /* PlayerBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerBullet.h; sourceTree = "<group>"; };
 		E1FE67C2186EF97B001C87B3 /* Maybe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Maybe.h; sourceTree = "<group>"; };
@@ -96,6 +102,10 @@
 				E11D1077186CD70800643AED /* ResourcePath.hpp */,
 				E11D1078186CD70800643AED /* main.cpp */,
 				E12A98F0186E29DF000EBD46 /* PlayingState.cpp */,
+				E1A6156B186F42FC00EB5C21 /* ScoreCounter.cpp */,
+				E1A6156E186F59C300EB5C21 /* StringHelper.cpp */,
+				E1A6156F186F59C300EB5C21 /* StringHelper.h */,
+				E1A6156C186F42FC00EB5C21 /* ScoreCounter.h */,
 				E1FE67C2186EF97B001C87B3 /* Maybe.h */,
 				E12A98FC186E51FB000EBD46 /* positions.h */,
 				E12A98F7186E4258000EBD46 /* EventBus.h */,
@@ -234,9 +244,11 @@
 				E1FE67C1186EED70001C87B3 /* PlayerBullet.cpp in Sources */,
 				E12A98EC186E23AF000EBD46 /* StateBasedGame.cpp in Sources */,
 				E12A98E3186CEB0B000EBD46 /* Invader.cpp in Sources */,
+				E1A61570186F59C400EB5C21 /* StringHelper.cpp in Sources */,
 				E11D108D186CDBFF00643AED /* Textures.cpp in Sources */,
 				E11D1076186CD70800643AED /* ResourcePath.mm in Sources */,
 				E12A98F5186E3C2F000EBD46 /* PhysicsHelper.cpp in Sources */,
+				E1A6156D186F42FC00EB5C21 /* ScoreCounter.cpp in Sources */,
 				E12A98F2186E29DF000EBD46 /* PlayingState.cpp in Sources */,
 				E12A98E6186DB800000EBD46 /* Player.cpp in Sources */,
 			);

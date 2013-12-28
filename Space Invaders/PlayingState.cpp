@@ -14,8 +14,6 @@
 
 const std::string hiScoreText = "S C O R E < 1 >     H I - S C O R E     S C O R E < 2 >";
 const std::string creditsText = "C R E D I T      0 0";
-const int FONT_SIZE = 8;
-const int PLAYER_Y = 208;
 const sf::Font &font = Fonts::getInstance().getMainFont();
 
 PlayingState::PlayingState() :
@@ -25,7 +23,8 @@ PlayingState::PlayingState() :
   mLives(X_MARGIN + 14, SCREEN_HEIGHT - Y_MARGIN - 8, 2),
   mRemainingLivesText(std::to_string(mLives.get()), font, FONT_SIZE),
   mCreditsText(creditsText, font, FONT_SIZE),
-  mMaybeBullet(new Nothing<PlayerBullet>)
+  mMaybeBullet(new Nothing<PlayerBullet>),
+  mPlayer1Score(25, 16, 0)
 {
     mScoreText.setColor(sf::Color::White);
     mScoreText.setPosition(X_MARGIN, 0);
@@ -47,8 +46,9 @@ PlayingState::PlayingState() :
 }
 
 void PlayingState::onStart(StateBasedGame &game) {
-    game.getEventBus().addSubscriber(&mPlayer);
-    game.getEventBus().addSubscriber(this);
+    EventBus<sf::Event> &eventBus = game.getEventBus();
+    eventBus.addSubscriber(&mPlayer);
+    eventBus.addSubscriber(this);
 }
 
 void PlayingState::onEnd(StateBasedGame &game) {
@@ -87,6 +87,7 @@ void PlayingState::onRender(StateBasedGame &game, sf::Time delta) {
     window.draw(mCreditsText);
     window.draw(mBottomBorder);
     window.draw(mLives);
+    window.draw(mPlayer1Score);
     
     mMaybeBullet->forEach([&](PlayerBullet &bullet) {
         window.draw(bullet);

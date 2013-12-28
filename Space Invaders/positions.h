@@ -15,5 +15,7 @@ const int PLAYER_WIDTH = 25;
 const int FRAMES_PER_SECOND = 60;
 const int X_MARGIN = 10;
 const int Y_MARGIN = 8;
+const int FONT_SIZE = 8;
+const int PLAYER_Y = 208;
 
 #endif
