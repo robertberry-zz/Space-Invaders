@@ -12,6 +12,8 @@
 #include "Fonts.h"
 #include <string>
 
+const std::string hiScoreText = "S C O R E < 1 >     H I - S C O R E     S C O R E < 2 >";
+const std::string creditsText = "C R E D I T    0 0";
 const int FONT_SIZE = 8;
 const int INITIAL_LIVES = 3;
 const sf::Font &font = Fonts::getInstance().getMainFont();
@@ -19,10 +21,10 @@ const sf::Font &font = Fonts::getInstance().getMainFont();
 PlayingState::PlayingState() :
   mPlayer((SCREEN_WIDTH - PLAYER_WIDTH) / 2, 200),
   mTestInvader((SCREEN_WIDTH - 20) / 2, 50, INVADER_2),
-  mScoreText("S C O R E < 1 >     H I - S C O R E     S C O R E < 2 >", font, FONT_SIZE),
+  mScoreText(hiScoreText, font, FONT_SIZE),
   mRemainingLives(INITIAL_LIVES),
   mRemainingLivesText(std::to_string(INITIAL_LIVES), font, FONT_SIZE),
-  mCreditsText("C R E D I T    0 0", font, FONT_SIZE),
+  mCreditsText(creditsText, font, FONT_SIZE),
   mMaybeBullet(new Nothing<PlayerBullet>)
 {
     mScoreText.setColor(sf::Color::White);
@@ -49,11 +51,17 @@ void PlayingState::onEnd(StateBasedGame &game) {
     game.getEventBus().removeSubscriber(&mPlayer);
 }
 
-void PlayingState::onLogic(StateBasedGame &game, sf::Time delta) {
+void PlayingState::onLogic(StateBasedGame &game, sf::Time delta) {    
     mPlayer.onDelta(delta);
-    mMaybeBullet->forEach([&](PlayerBullet &bullet) {
-        bullet.onDelta(delta);
-    });
+    if (mMaybeBullet->exists([&](PlayerBullet &bullet) {
+        return (bullet.getGlobalBounds().top + bullet.getGlobalBounds().height) < 0;
+    })) {
+        mMaybeBullet = std::unique_ptr<Nothing<PlayerBullet>>(new Nothing<PlayerBullet>);
+    } else {
+        mMaybeBullet->forEach([&](PlayerBullet &bullet) {
+            bullet.onDelta(delta);
+        });
+    }
 }
 
 void PlayingState::onRender(StateBasedGame &game, sf::Time delta) {

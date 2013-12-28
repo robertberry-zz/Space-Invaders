@@ -10,9 +10,9 @@
 #include "PhysicsHelper.h"
 
 /** Bullet velocity is constant */
-const sf::Vector2f bulletVelocity(0, -60);
+const sf::Vector2f bulletVelocity(0, -80);
 const int BULLET_WIDTH = 1;
-const int BULLET_HEIGHT = 6;
+const int BULLET_HEIGHT = 5;
 
 PlayerBullet::PlayerBullet(int x, int y) {
     mShape.setSize(sf::Vector2f(BULLET_WIDTH, BULLET_HEIGHT));
@@ -26,4 +26,8 @@ void PlayerBullet::draw(sf::RenderTarget &target, sf::RenderStates states) const
 
 void PlayerBullet::onDelta(sf::Time delta) {
     mShape.move(PhysicsHelper::getInstance().delta(bulletVelocity, delta));
+}
+
+sf::FloatRect PlayerBullet::getGlobalBounds() {
+    return mShape.getGlobalBounds();
 }

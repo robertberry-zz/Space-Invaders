@@ -27,6 +27,14 @@ public:
             f(get());
         }
     }
+    
+    template <typename F> bool exists(F f) {
+        if (isDefined()) {
+            return f(get());
+        } else {
+            return false;
+        }
+    }
 };
 
 template <typename T>

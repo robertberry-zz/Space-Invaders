@@ -21,6 +21,8 @@ public:
     
     void draw(sf::RenderTarget &target, sf::RenderStates states) const;
     void onDelta(sf::Time delta);
+    
+    sf::FloatRect getGlobalBounds();
 };
 
 #endif /* defined(__Space_Invaders__PlayerBullet__) */
