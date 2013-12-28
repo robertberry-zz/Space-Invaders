@@ -14,8 +14,10 @@
 
 class GameState {
 public:
-    virtual void onLogic(StateBasedGame& game, sf::Time delta) = 0;
-    virtual void onRender(StateBasedGame& game, sf::Time delta) = 0;
+    virtual void onStart(StateBasedGame &game) = 0;
+    virtual void onEnd(StateBasedGame &game) = 0;
+    virtual void onLogic(StateBasedGame &game, sf::Time delta) = 0;
+    virtual void onRender(StateBasedGame &game, sf::Time delta) = 0;
 };
 
 #endif /* defined(__Space_Invaders__GameState__) */

@@ -19,6 +19,8 @@ private:
     Invader mTestInvader;
 public:
     PlayingState();
+    void onStart(StateBasedGame &game);
+    void onEnd(StateBasedGame &game);
     void onLogic(StateBasedGame &game, sf::Time delta);
     void onRender(StateBasedGame &game, sf::Time delta);
 };

@@ -47,6 +47,9 @@
 		E12A98F1186E29DF000EBD46 /* PlayingState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingState.h; sourceTree = "<group>"; };
 		E12A98F3186E3C2F000EBD46 /* PhysicsHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsHelper.cpp; sourceTree = "<group>"; };
 		E12A98F4186E3C2F000EBD46 /* PhysicsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsHelper.h; sourceTree = "<group>"; };
+		E12A98F7186E4258000EBD46 /* EventBus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventBus.h; sourceTree = "<group>"; };
+		E12A98FA186E432E000EBD46 /* EventSubscriber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventSubscriber.h; sourceTree = "<group>"; };
+		E12A98FC186E51FB000EBD46 /* positions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = positions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,9 @@
 				E11D1077186CD70800643AED /* ResourcePath.hpp */,
 				E11D1078186CD70800643AED /* main.cpp */,
 				E12A98F0186E29DF000EBD46 /* PlayingState.cpp */,
+				E12A98FC186E51FB000EBD46 /* positions.h */,
+				E12A98F7186E4258000EBD46 /* EventBus.h */,
+				E12A98FA186E432E000EBD46 /* EventSubscriber.h */,
 				E12A98F1186E29DF000EBD46 /* PlayingState.h */,
 				E12A98EA186E23AF000EBD46 /* StateBasedGame.cpp */,
 				E12A98EB186E23AF000EBD46 /* StateBasedGame.h */,

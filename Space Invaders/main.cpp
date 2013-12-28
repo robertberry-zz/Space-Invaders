@@ -1,14 +1,16 @@
-#include <SFML/Audio.hpp>
-#include <SFML/Graphics.hpp>
-#include "ResourcePath.hpp"
 #include "StateBasedGame.h"
 #include "PlayingState.h"
-
-const int FRAME_RATE = 60;
+#include "positions.h"
 
 int main(int, char const**)
 {
-    StateBasedGame game("Space Invaders", 217, 248, 60, (GameState *) new PlayingState());
+    StateBasedGame game(
+        "Space Invaders",
+        SCREEN_WIDTH,
+        SCREEN_HEIGHT,
+        FRAMES_PER_SECOND,
+        (GameState *) new PlayingState()
+    );
     game.run();
     
     return EXIT_SUCCESS;

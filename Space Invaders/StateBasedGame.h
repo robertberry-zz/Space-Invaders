@@ -12,6 +12,7 @@
 #include <memory>
 #include <string>
 #include <SFML/Graphics.hpp>
+#include "EventBus.h"
 
 class GameState;
 
@@ -22,11 +23,13 @@ private:
     int mScreenWidth;
     int mScreenHeight;
     std::unique_ptr<GameState> mState;
+    EventBus<sf::Event> mEventBus;
 public:
     StateBasedGame(std::string title, int screenWidth, int screenHeight, int frameRate, GameState *initialState);
     void setState(GameState *state);
     sf::RenderWindow &getWindow();
     void run();
+    EventBus<sf::Event> &getEventBus();
 };
 
 #endif /* defined(__Space_Invaders__StateBasedGame__) */

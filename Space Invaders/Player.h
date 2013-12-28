@@ -11,12 +11,14 @@
 
 #include <SFML/Graphics.hpp>
 #include "DeltaListener.h"
+#include "EventSubscriber.h"
 
-class Player : public sf::Drawable, public DeltaListener {
+class Player : public sf::Drawable, public DeltaListener, public EventSubscriber<sf::Event> {
 public:
     Player(int x, int y);
     void setVelocity(sf::Vector2f velocity);
     void onDelta(sf::Time delta);
+    void update(sf::Event event);
 private:
     sf::Vector2f mVelocity;
     sf::Sprite mSprite;
