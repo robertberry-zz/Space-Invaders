@@ -51,6 +51,9 @@ void PlayingState::onEnd(StateBasedGame &game) {
 
 void PlayingState::onLogic(StateBasedGame &game, sf::Time delta) {
     mPlayer.onDelta(delta);
+    mMaybeBullet->forEach([&](PlayerBullet &bullet) {
+        bullet.onDelta(delta);
+    });
 }
 
 void PlayingState::onRender(StateBasedGame &game, sf::Time delta) {
@@ -69,8 +72,8 @@ void PlayingState::onRender(StateBasedGame &game, sf::Time delta) {
 
 void PlayingState::update(sf::Event event) {
     if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Key::Space && mMaybeBullet->isEmpty()) {
-        auto playerPosition = mPlayer.getPosition();
+        auto playerBounds = mPlayer.getGlobalBounds();
         
-        mMaybeBullet = std::unique_ptr<Maybe<PlayerBullet>>(new Just<PlayerBullet>(PlayerBullet(playerPosition.x, playerPosition.y - 10)));
+        mMaybeBullet = std::unique_ptr<Maybe<PlayerBullet>>(new Just<PlayerBullet>(PlayerBullet(playerBounds.left + playerBounds.width / 2, playerBounds.top)));
     }
 }

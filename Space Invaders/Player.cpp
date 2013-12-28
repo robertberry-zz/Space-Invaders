@@ -46,3 +46,7 @@ void Player::update(sf::Event event) {
 sf::Vector2f Player::getPosition() {
     return mSprite.getPosition();
 }
+
+sf::FloatRect Player::getGlobalBounds() {
+    return mSprite.getGlobalBounds();
+}
