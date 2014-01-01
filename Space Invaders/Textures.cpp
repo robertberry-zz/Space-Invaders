@@ -47,7 +47,7 @@ void Textures::loadTexture(Textures::Key k, std::string fileName) {
     mTextures[k].loadFromFile(resourcePath() + fileName);
 }
 
-Textures& Textures::getInstance() {
+Textures &Textures::getInstance() {
     static Textures instance;
     return instance;
 }

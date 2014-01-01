@@ -11,7 +11,9 @@
 #include "positions.h"
 #include "Fonts.h"
 #include <string>
+#include "PhysicsHelper.h"
 
+const int N_SHIELDS = 1;
 const std::string hiScoreText = "S C O R E < 1 >     H I - S C O R E     S C O R E < 2 >";
 const std::string creditsText = "C R E D I T      0 0";
 const sf::Font &font = Fonts::getInstance().getMainFont();
@@ -24,7 +26,8 @@ PlayingState::PlayingState() :
   mRemainingLivesText(std::to_string(mLives.get()), font, FONT_SIZE),
   mCreditsText(creditsText, font, FONT_SIZE),
   mMaybeBullet(new Nothing<PlayerBullet>),
-  mPlayer1Score(25, 16, 0)
+  mPlayer1Score(25, 16, 0),
+  mShield(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 80)
 {
     mScoreText.setColor(sf::Color::White);
     mScoreText.setPosition(X_MARGIN, 0);
@@ -43,6 +46,10 @@ PlayingState::PlayingState() :
     mBottomBorder.setPosition(0, SCREEN_HEIGHT - Y_MARGIN - creditsBounds.height - 1);
     mBottomBorder.setSize(sf::Vector2f(SCREEN_WIDTH, 1));
     mBottomBorder.setFillColor(sf::Color::Green);
+    
+    /*for (int i = 0; i < N_SHIELDS; i++) {
+        mShields.push_back(Shield(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 80));
+    }*/
 }
 
 void PlayingState::onStart(StateBasedGame &game) {
@@ -68,13 +75,32 @@ void PlayingState::onLogic(StateBasedGame &game, sf::Time delta) {
     if (mMaybeBullet->exists([&](PlayerBullet &bullet) {
         return (bullet.getGlobalBounds().top + bullet.getGlobalBounds().height) < 0;
     })) {
-        mMaybeBullet = std::unique_ptr<Nothing<PlayerBullet>>(new Nothing<PlayerBullet>);
-    } else {
-        mMaybeBullet->forEach([&](PlayerBullet &bullet) {
-            bullet.onDelta(delta);
-        });
+        cleanUpBullet();
     }
+    mMaybeBullet->forEach([&](PlayerBullet &bullet) {
+        bullet.onDelta(delta);
+        
+        if (bullet.collidesWith(mShield)) {
+            auto bulletBounds = bullet.getGlobalBounds();
+            auto shieldBounds = mShield.getGlobalBounds();
+            
+            PhysicsHelper::getInstance().forAll(bulletBounds, [&](float x, float y) {
+                int sX = static_cast<int>(x - shieldBounds.left);
+                int sY = static_cast<int>(y - shieldBounds.top);
+                
+                if (sY >= 0 && sY < shieldBounds.height) {
+                    mShield.setPixel(sX, sY, false);
+                }
+            });
+            mShield.updateSprite();
+            cleanUpBullet();
+        }
+    });
     mRemainingLivesText.setString(std::to_string(mLives.get()));
+}
+
+void PlayingState::cleanUpBullet() {
+    mMaybeBullet = std::unique_ptr<Nothing<PlayerBullet>>(new Nothing<PlayerBullet>);
 }
 
 void PlayingState::onRender(StateBasedGame &game, sf::Time delta) {
@@ -88,6 +114,7 @@ void PlayingState::onRender(StateBasedGame &game, sf::Time delta) {
     window.draw(mBottomBorder);
     window.draw(mLives);
     window.draw(mPlayer1Score);
+    window.draw(mShield);
     
     mMaybeBullet->forEach([&](PlayerBullet &bullet) {
         window.draw(bullet);

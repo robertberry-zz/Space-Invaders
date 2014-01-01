@@ -15,9 +15,11 @@
 #include "EventSubscriber.h"
 #include "PlayerBullet.h"
 #include <memory>
+#include <vector>
 #include "Maybe.h"
 #include "LivesCounter.h"
 #include "ScoreCounter.h"
+#include "Shield.h"
 
 class PlayingState : public GameState, public EventSubscriber<sf::Event> {
 private:
@@ -30,13 +32,15 @@ private:
     ScoreCounter mPlayer1Score;
     sf::RectangleShape mBottomBorder;
     std::unique_ptr<Maybe<PlayerBullet>> mMaybeBullet;
+    /*std::vector<Shield> mShields;*/
+    Shield mShield;
+    void cleanUpBullet();
 public:
     PlayingState();
     void onStart(StateBasedGame &game);
     void onEnd(StateBasedGame &game);
     void onLogic(StateBasedGame &game, sf::Time delta);
     void onRender(StateBasedGame &game, sf::Time delta);
-    
     void update(sf::Event event);
 };
 

@@ -30,3 +30,15 @@ sf::Vector2f PhysicsHelper::nextPosition(sf::Vector2f position, sf::Vector2f vel
 sf::Vector2f PhysicsHelper::delta(sf::Vector2f velocity, sf::Time time) {
     return multiply(velocity, time.asSeconds());
 }
+
+bool PhysicsHelper::overlaps(sf::FloatRect r1, sf::FloatRect r2) {
+    float r1Right = r1.left + r1.width;
+    float r1Bottom = r1.top + r1.height;
+    float r2Right = r2.left + r2.width;
+    float r2Bottom = r2.top + r2.height;
+    
+    bool intersectsX = (r1Right >= r2.left && r1Right <= r2Right) || (r1.left <= r2Right && r1.left >= r2.left);
+    bool intersectsY = (r1Bottom >= r2.top && r1Bottom <= r2Bottom) || (r1.top <= r2Bottom && r1.top >= r2.top);
+    
+    return intersectsX && intersectsY;
+}

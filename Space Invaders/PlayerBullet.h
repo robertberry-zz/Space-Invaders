@@ -11,6 +11,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "DeltaListener.h"
+#include "Shield.h"
 
 class PlayerBullet : public sf::Drawable, public DeltaListener {
 private:
@@ -23,6 +24,8 @@ public:
     void onDelta(sf::Time delta);
     
     sf::FloatRect getGlobalBounds();
+    
+    bool collidesWith(Shield shield);
 };
 
 #endif /* defined(__Space_Invaders__PlayerBullet__) */

@@ -31,3 +31,23 @@ void PlayerBullet::onDelta(sf::Time delta) {
 sf::FloatRect PlayerBullet::getGlobalBounds() {
     return mShape.getGlobalBounds();
 }
+
+bool PlayerBullet::collidesWith(Shield shield) {
+    auto bulletBounds = getGlobalBounds();
+    auto shieldBounds = shield.getGlobalBounds();
+    
+    if (PhysicsHelper::getInstance().overlaps(bulletBounds, shieldBounds)) {
+        for (int x = bulletBounds.left; x < bulletBounds.left + bulletBounds.width; x++) {
+            for (int y = bulletBounds.top; y < bulletBounds.top + bulletBounds.height; y++) {
+                int relX = x - shieldBounds.left;
+                int relY = y - shieldBounds.top;
+                
+                if (relY > 0 && relY < shieldBounds.height && shield.getPixel(relX, relY)) {
+                    return true;
+                }
+            }
+        }
+    }
+    
+    return false;
+}

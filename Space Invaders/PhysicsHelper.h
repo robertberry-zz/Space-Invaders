@@ -9,7 +9,7 @@
 #ifndef __Space_Invaders__PhysicsHelper__
 #define __Space_Invaders__PhysicsHelper__
 
-#include <SFML/System.hpp>
+#include <SFML/Graphics.hpp>
 
 class PhysicsHelper {
 public:
@@ -34,10 +34,25 @@ public:
      * Multiplies a vector by a scalar value
      */
     sf::Vector2f multiply(sf::Vector2f v, float n);
+    
+    template <typename F> void forAll(sf::FloatRect rect, F f);
+    
+    /**
+     * Whether two Rects overlap
+     */
+    bool overlaps(sf::FloatRect r1, sf::FloatRect r2);
 private:
     PhysicsHelper();
     PhysicsHelper(PhysicsHelper const&);
     void operator=(PhysicsHelper const&);
 };
+
+template <typename F> void PhysicsHelper::forAll(sf::FloatRect rect, F f) {
+    for (float x = rect.left; x < rect.left + rect.width; x++) {
+        for (float y = rect.top; y < rect.top + rect.height; y++) {
+            f(x, y);
+        }
+    }
+}
 
 #endif /* defined(__Space_Invaders__PhysicsHelper__) */
