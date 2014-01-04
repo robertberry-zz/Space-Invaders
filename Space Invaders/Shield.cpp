@@ -34,7 +34,8 @@ bool Shield::getPixel(unsigned int x, unsigned int y) {
 }
 
 void Shield::setPixel(unsigned int x, unsigned int y, bool alive) {
-    if (!alive) mBitmap.setPixel(x, y, sf::Color(0, 0, 0, 255));
+    if (!alive && x < getWidth() && y <= getHeight())
+        mBitmap.setPixel(x, y, sf::Color(0, 0, 0, 255));
 }
 
 int Shield::getX() {

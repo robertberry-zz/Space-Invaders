@@ -20,6 +20,7 @@
 #include "LivesCounter.h"
 #include "ScoreCounter.h"
 #include "Shield.h"
+#include "Explosion.h"
 
 class PlayingState : public GameState, public EventSubscriber<sf::Event> {
 private:
@@ -34,6 +35,7 @@ private:
     std::unique_ptr<Maybe<PlayerBullet>> mMaybeBullet;
     /*std::vector<Shield> mShields;*/
     Shield mShield;
+    std::unique_ptr<Maybe<Explosion>> mMaybeExplosion;
     void cleanUpBullet();
 public:
     PlayingState();

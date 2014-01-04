@@ -42,7 +42,7 @@ bool PlayerBullet::collidesWith(Shield shield) {
                 int relX = x - shieldBounds.left;
                 int relY = y - shieldBounds.top;
                 
-                if (relY > 0 && relY < shieldBounds.height && shield.getPixel(relX, relY)) {
+                if (relY >= 0 && relY < shieldBounds.height && shield.getPixel(relX, relY)) {
                     return true;
                 }
             }

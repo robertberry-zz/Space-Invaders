@@ -23,7 +23,9 @@
 		E12A98F5186E3C2F000EBD46 /* PhysicsHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98F3186E3C2F000EBD46 /* PhysicsHelper.cpp */; };
 		E12A98FE186E5B32000EBD46 /* space_invaders.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E12A98FD186E5B32000EBD46 /* space_invaders.ttf */; };
 		E12A9901186E5B57000EBD46 /* Fonts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E12A98FF186E5B57000EBD46 /* Fonts.cpp */; };
+		E149276918788F0000DF548D /* Explosion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E149276718788F0000DF548D /* Explosion.cpp */; };
 		E1842691186F1D7000F8D4E4 /* LivesCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E184268F186F1D6F00F8D4E4 /* LivesCounter.cpp */; };
+		E195043B187890C600496665 /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1950439187890C600496665 /* Random.cpp */; };
 		E1A6156D186F42FC00EB5C21 /* ScoreCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1A6156B186F42FC00EB5C21 /* ScoreCounter.cpp */; };
 		E1A61570186F59C400EB5C21 /* StringHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1A6156E186F59C300EB5C21 /* StringHelper.cpp */; };
 		E1A61573186F5EE300EB5C21 /* Shield.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1A61571186F5EE300EB5C21 /* Shield.cpp */; };
@@ -63,8 +65,12 @@
 		E12A98FD186E5B32000EBD46 /* space_invaders.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = space_invaders.ttf; sourceTree = "<group>"; };
 		E12A98FF186E5B57000EBD46 /* Fonts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fonts.cpp; sourceTree = "<group>"; };
 		E12A9900186E5B57000EBD46 /* Fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fonts.h; sourceTree = "<group>"; };
+		E149276718788F0000DF548D /* Explosion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Explosion.cpp; sourceTree = "<group>"; };
+		E149276818788F0000DF548D /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explosion.h; sourceTree = "<group>"; };
 		E184268F186F1D6F00F8D4E4 /* LivesCounter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LivesCounter.cpp; sourceTree = "<group>"; };
 		E1842690186F1D6F00F8D4E4 /* LivesCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivesCounter.h; sourceTree = "<group>"; };
+		E1950439187890C600496665 /* Random.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Random.cpp; sourceTree = "<group>"; };
+		E195043A187890C600496665 /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Random.h; sourceTree = "<group>"; };
 		E1A6156B186F42FC00EB5C21 /* ScoreCounter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScoreCounter.cpp; sourceTree = "<group>"; };
 		E1A6156C186F42FC00EB5C21 /* ScoreCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreCounter.h; sourceTree = "<group>"; };
 		E1A6156E186F59C300EB5C21 /* StringHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringHelper.cpp; sourceTree = "<group>"; };
@@ -112,6 +118,10 @@
 				E12A98F0186E29DF000EBD46 /* PlayingState.cpp */,
 				E1A61571186F5EE300EB5C21 /* Shield.cpp */,
 				E1A61572186F5EE300EB5C21 /* Shield.h */,
+				E149276718788F0000DF548D /* Explosion.cpp */,
+				E1950439187890C600496665 /* Random.cpp */,
+				E195043A187890C600496665 /* Random.h */,
+				E149276818788F0000DF548D /* Explosion.h */,
 				E1A6156B186F42FC00EB5C21 /* ScoreCounter.cpp */,
 				E1A6156E186F59C300EB5C21 /* StringHelper.cpp */,
 				E1A6156F186F59C300EB5C21 /* StringHelper.h */,
@@ -264,9 +274,11 @@
 				E11D1076186CD70800643AED /* ResourcePath.mm in Sources */,
 				E10C197B18748A9B00521D44 /* Images.cpp in Sources */,
 				E12A98F5186E3C2F000EBD46 /* PhysicsHelper.cpp in Sources */,
+				E195043B187890C600496665 /* Random.cpp in Sources */,
 				E1A6156D186F42FC00EB5C21 /* ScoreCounter.cpp in Sources */,
 				E12A98F2186E29DF000EBD46 /* PlayingState.cpp in Sources */,
 				E12A98E6186DB800000EBD46 /* Player.cpp in Sources */,
+				E149276918788F0000DF548D /* Explosion.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

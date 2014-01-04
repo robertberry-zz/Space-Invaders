@@ -18,6 +18,9 @@ const std::string hiScoreText = "S C O R E < 1 >     H I - S C O R E     S C O R
 const std::string creditsText = "C R E D I T      0 0";
 const sf::Font &font = Fonts::getInstance().getMainFont();
 
+const int EXPLOSION_WIDTH = 5;
+const int EXPLOSION_HEIGHT = 8;
+
 PlayingState::PlayingState() :
   mPlayer((SCREEN_WIDTH - PLAYER_WIDTH) / 2, PLAYER_Y),
   mTestInvader((SCREEN_WIDTH - 20) / 2, 50, INVADER_2),
@@ -27,7 +30,8 @@ PlayingState::PlayingState() :
   mCreditsText(creditsText, font, FONT_SIZE),
   mMaybeBullet(new Nothing<PlayerBullet>),
   mPlayer1Score(25, 16, 0),
-  mShield(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 80)
+  mShield(SCREEN_WIDTH / 2, SCREEN_HEIGHT - 80),
+  mMaybeExplosion(new Nothing<Explosion>)
 {
     mScoreText.setColor(sf::Color::White);
     mScoreText.setPosition(X_MARGIN, 0);
@@ -84,18 +88,29 @@ void PlayingState::onLogic(StateBasedGame &game, sf::Time delta) {
             auto bulletBounds = bullet.getGlobalBounds();
             auto shieldBounds = mShield.getGlobalBounds();
             
-            PhysicsHelper::getInstance().forAll(bulletBounds, [&](float x, float y) {
-                int sX = static_cast<int>(x - shieldBounds.left);
-                int sY = static_cast<int>(y - shieldBounds.top);
+            int centreX = bulletBounds.left + bulletBounds.width / 2;
+            int centreY = bulletBounds.top + bulletBounds.height / 2;
+            
+            mMaybeExplosion = std::unique_ptr<Maybe<Explosion>>(
+                new Just<Explosion>(Explosion(centreX - EXPLOSION_WIDTH / 2, centreY - EXPLOSION_HEIGHT / 2, EXPLOSION_WIDTH, EXPLOSION_HEIGHT)));
+            
+            mMaybeExplosion->forEach([&](Explosion explosion) {
+                auto explosionBounds = explosion.getGlobalBounds();
                 
-                if (sY >= 0 && sY < shieldBounds.height) {
-                    mShield.setPixel(sX, sY, false);
-                }
+                PhysicsHelper::getInstance().forAll(explosionBounds, [&](float x, float y) {
+                    if (explosion.get(x - explosionBounds.left, y - explosionBounds.top)) {
+                        mShield.setPixel(x - shieldBounds.left, y - shieldBounds.top, false);
+                    }
+                });                
             });
+            
+            mMaybeExplosion = std::unique_ptr<Nothing<Explosion>>(new Nothing<Explosion>);
+
             mShield.updateSprite();
             cleanUpBullet();
         }
     });
+    
     mRemainingLivesText.setString(std::to_string(mLives.get()));
 }
 
@@ -118,6 +133,10 @@ void PlayingState::onRender(StateBasedGame &game, sf::Time delta) {
     
     mMaybeBullet->forEach([&](PlayerBullet &bullet) {
         window.draw(bullet);
+    });
+    
+    mMaybeExplosion->forEach([&](Explosion &explosion) {
+        window.draw(explosion);
     });
 }
 
